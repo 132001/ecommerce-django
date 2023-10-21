@@ -1,0 +1,18 @@
+{% extends 'base/base.html' %}
+{% block start %}
+
+<div class="container mt-5 pt-5">
+    <div class="row">
+        {% for cat in cats %}
+        <div class="col-md-3">
+            <figure class="card card-product-grid">
+                <div class="img-wrap"> <img src="{{cat.category_image.url}}"></div>
+                <figcaption class="info-wrap border-top">
+                    <a href="{% url 'sub_cat' cat.category_slug%}" class="title">{{cat.category_name}}</a>
+                </figcaption>
+            </figure> <!-- card // -->
+        </div> 
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
